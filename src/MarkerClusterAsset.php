@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @copyright Copyright (c) 2013-2015 2amigOS! Consulting Group LLC
