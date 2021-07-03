@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @copyright Copyright (c) 2013-2015 2amigOS! Consulting Group LLC
@@ -21,8 +22,12 @@ class MarkerClusterAsset extends AssetBundle
 {
 
     public $css = [
-        'css/MarkerCluster.css',
-        'css/MarkerCluster.Default.css'
+        'MarkerCluster.css',
+        'MarkerCluster.Default.css'
+    ];
+
+    public $js = [
+        YII_DEBUG ? 'leaflet.markercluster-src.js' : 'leaflet.markercluster.js'
     ];
 
     public $depends = [
@@ -32,7 +37,7 @@ class MarkerClusterAsset extends AssetBundle
 
     public function init()
     {
-        $this->sourcePath = __DIR__ . '/assets';
-        $this->js = YII_DEBUG ? ['js/leaflet.markercluster-src.js'] : ['js/leaflet.markercluster.js'];
+        $this->sourcePath = \Yii::getAlias('@bower').'/leaflet.markercluster/dist';
+        
     }
 }
